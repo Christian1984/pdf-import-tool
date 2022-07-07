@@ -12,16 +12,19 @@ import (
 func main() {
 	var in string
 	var out string
+	var gspath string
 	var verbose bool
 
 	flag.StringVar(&in, "in", "", "the input file as a relative or absolute path, e.g. .\\in\\test.pdf")
 	flag.StringVar(&out, "out", "", "the output file path (pattern) as a relative or absolute path, e.g. .\\out\\out--%03d.png")
+	flag.StringVar(&gspath, "gspath", ".", "relative path to the ghostscript executable")
 	flag.BoolVar(&verbose, "verbose", false, "enable verbose mode")
 	flag.Parse()
 
 	if verbose {
 		fmt.Println("in: " + in)
 		fmt.Println("out: " + out)
+		fmt.Println("gspath: " + gspath)
 	}
 
 	absIn, inErr := filepath.Abs(in)
@@ -52,7 +55,8 @@ func main() {
 		absIn,
 	}
 
-	cmd := exec.Command(".\\gswin64c.exe", cmdParams...)
+	absGs, _ := filepath.Abs(gspath + "\\gswin64c.exe")
+	cmd := exec.Command(absGs, cmdParams...)
 
 	fmt.Println("Starting import for file " + absIn)
 	s, importErr := cmd.Output()
