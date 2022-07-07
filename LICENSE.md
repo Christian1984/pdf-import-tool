@@ -1,4 +1,4 @@
-Bundles relevant files for quick and easy access to ghostscipt from the command line.
+Bundles relevant files and provides a simple exectutable with a "shortcut" CLI for quick and easy access to ghostscipt with most common settings.
 
 Copyright (C) 2022 Christian-Alexander Hoffmann
 
