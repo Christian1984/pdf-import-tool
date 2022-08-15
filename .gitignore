@@ -1,3 +1,4 @@
 in/
 out/
-gs-cmd.exe
+pdf-importer.exe
+*.pdf

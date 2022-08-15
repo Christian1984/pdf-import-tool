@@ -48,7 +48,7 @@ func main() {
 		"-sDEVICE=png16m",
 		"-dTextAlphaBits=4",
 		"-dGraphicsAlphaBits=4",
-		"-r150x150",
+		"-r600",
 
 		"-o",
 		absOut,
