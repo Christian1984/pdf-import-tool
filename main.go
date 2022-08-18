@@ -8,9 +8,12 @@ import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
+	"github.com/Christian1984/pdf-importer/res"
 )
 
 const APP_NAME = "FSKneeboard PDF Import Tool"
+
+var BuildVersion string
 
 var ParentWindow *fyne.Window
 
@@ -43,7 +46,18 @@ func main() {
 	fmt.Println("AbsOutputRoot: " + AbsOutputRoot)
 
 	a := app.New()
-	w := a.NewWindow(APP_NAME)
+
+	fmt.Println("Loading icon...", false)
+	iconAsset, err := res.Asset("icon.png")
+	if err == nil {
+		iconResource := fyne.NewStaticResource("icon.png", iconAsset)
+		fmt.Println("Icon loaded", false)
+		a.SetIcon(iconResource)
+	} else {
+		fmt.Println("Icon could not be loaded!", false)
+	}
+
+	w := a.NewWindow(APP_NAME + " " + BuildVersion)
 	importPanel := PdfImportPanel()
 	max := container.NewMax(importPanel)
 	w.SetContent(max)

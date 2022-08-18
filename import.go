@@ -7,6 +7,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"strings"
+	"syscall"
 )
 
 type PdfFileInfo struct {
@@ -53,6 +54,7 @@ func importPdfChart(sourcePath string, targetBasePath string, filename string) e
 	}
 
 	cmd := exec.Command(ImporterExePath, cmdParams...)
+	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 	fmt.Println("Import command is: " + cmd.String())
 
 	s, importErr := cmd.Output()
