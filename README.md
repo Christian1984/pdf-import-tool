@@ -1,6 +1,6 @@
 # A Simple PNG-to-PDF Importer For FSKneeboard
 
-This is a simple PDF importer tool for [FSKneeboard](https://fskneeboard.com) released under the GNU Affero General Public License license.
+This is a simple PDF importer tool for [FSKneeboard](https://fskneeboard.com) released under the GNU Affero General Public License.
 
 # Usage
 
