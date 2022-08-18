@@ -4,3 +4,4 @@ pdf-importer.exe
 *.syso
 *.old
 *.pdf
+bindata.go
