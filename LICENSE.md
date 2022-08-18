@@ -1,4 +1,4 @@
-Bundles relevant files and provides a simple exectutable with a "shortcut" CLI for quick and easy access to ghostscipt with most common settings.
+Bundles relevant files and provides a simple gui application to import a collection of pdf documents into a structured output directory and file hirarchy.
 
 Copyright (C) 2022 Christian-Alexander Hoffmann
 

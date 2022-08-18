@@ -1,4 +1,6 @@
 in/
 out/
 pdf-importer.exe
+*.syso
+*.old
 *.pdf
