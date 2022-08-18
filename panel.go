@@ -31,7 +31,7 @@ func runImport() {
 		fmt.Println("Something went wrong, reason: " + err.Error())
 		updateStatus("PDF batch import failed!")
 
-		ShowError("PDF Import failed! Please refer to the Console Panel and/or logs for details!")
+		ShowError("PDF Import failed! Reason:\n" + err.Error())
 	} else {
 		fmt.Println("Import finished!")
 		updateStatus("PDF batch import finished!")
