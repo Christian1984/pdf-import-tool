@@ -4,7 +4,8 @@ This is a simple PDF importer tool for FSKneeboard released under the GNU Affero
 
 # Usage
 
-Run pdf-importer with the required flags:
+The PDF import tool supports the following flags:
 
-- `--in`, the input root directory (containing the pdf documents)
-- `--out`, the output root directory (where the PNG files are supposed to go...)
+- `--lib`, the folder where the ghostscript library resides (usually `./lib` for development and `.` for deployment)
+- `--in`, the input root directory (containing the pdf documents, defaults to `in` for development)
+- `--out`, the output root directory (where the PNG files are supposed to go, defaults to `in` for development)

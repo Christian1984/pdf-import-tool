@@ -118,6 +118,7 @@ func PdfImportPanel() *fyne.Container {
 			} else {
 				fmt.Println("Importer module not found!")
 				ShowError("GhostScript exectuable not found. Please reinstall and try again!")
+				importRunningBinding.Set(false)
 			}
 		}()
 	})

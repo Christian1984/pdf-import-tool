@@ -9,10 +9,6 @@ import (
 	"strings"
 )
 
-var importerBasePath = AbsLibPath
-var importerExePath, _ = filepath.Abs(importerBasePath + "\\" + "gswin64c.exe")
-var importerDllPath, _ = filepath.Abs(importerBasePath + "\\" + "gsdll64.dll")
-
 type PdfFileInfo struct {
 	SourcePath string
 	TargetPath string
@@ -56,7 +52,7 @@ func importPdfChart(sourcePath string, targetBasePath string, filename string) e
 		absIn,
 	}
 
-	cmd := exec.Command(importerExePath, cmdParams...)
+	cmd := exec.Command(ImporterExePath, cmdParams...)
 	fmt.Println("Import command is: " + cmd.String())
 
 	s, importErr := cmd.Output()
@@ -74,6 +70,7 @@ func importPdfChart(sourcePath string, targetBasePath string, filename string) e
 }
 
 func fileExists(filePath string) bool {
+	fmt.Println("Looking for file " + filePath)
 	_, err := os.Stat(filePath)
 
 	if errors.Is(err, os.ErrNotExist) {
@@ -182,7 +179,7 @@ func ImportPdfFolder(updateStatusCallback func(string)) error {
 }
 
 func HasImporter() bool {
-	if !fileExists(importerExePath) || !fileExists(importerDllPath) {
+	if !fileExists(ImporterExePath) || !fileExists(ImporterDllPath) {
 		fmt.Println("Local importer binaries not found or incomplete!")
 		return false
 	}

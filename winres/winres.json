@@ -41,16 +41,16 @@
         },
         "info": {
           "0409": {
-            "Comments": "A PNG to PDF importer for FSKneeboard",
+            "Comments": "A PNG to PDF import tool for FSKneeboard",
             "CompanyName": "FSKneeboard",
-            "FileDescription": "A PNG to PDF importer for FSKneeboard",
+            "FileDescription": "A PNG to PDF import tool for FSKneeboard",
             "FileVersion": "",
             "InternalName": "",
             "LegalCopyright": "Christian-Alexander Hoffmann",
             "LegalTrademarks": "",
             "OriginalFilename": "",
             "PrivateBuild": "",
-            "ProductName": "FSKneeboard PDF Importer",
+            "ProductName": "FSKneeboard PDF Import Tool",
             "ProductVersion": "",
             "SpecialBuild": ""
           }

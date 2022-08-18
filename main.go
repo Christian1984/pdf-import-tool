@@ -10,7 +10,7 @@ import (
 	"fyne.io/fyne/v2/container"
 )
 
-const APP_NAME = "FSKneeboard PDF Importer"
+const APP_NAME = "FSKneeboard PDF Import Tool"
 
 var ParentWindow *fyne.Window
 
@@ -22,15 +22,21 @@ var AbsLibPath string
 var AbsInputRoot string
 var AbsOutputRoot string
 
+var ImporterExePath string
+var ImporterDllPath string
+
 func main() {
 	flag.StringVar(&relLibPath, "lib", ".\\lib", "specify lib path")
-	flag.StringVar(&relInputRoot, "in", "", "specify input root")
-	flag.StringVar(&relOutputRoot, "out", "", "specify output root")
+	flag.StringVar(&relInputRoot, "in", ".\\in", "specify input root")
+	flag.StringVar(&relOutputRoot, "out", ".\\out", "specify output root")
 	flag.Parse()
 
 	AbsLibPath, _ = filepath.Abs(relLibPath)
 	AbsInputRoot, _ = filepath.Abs(relInputRoot)
 	AbsOutputRoot, _ = filepath.Abs(relOutputRoot)
+
+	ImporterExePath, _ = filepath.Abs(AbsLibPath + "\\" + "gswin64c.exe")
+	ImporterDllPath, _ = filepath.Abs(AbsLibPath + "\\" + "gsdll64.dll")
 
 	fmt.Println("AbsLibPath: " + AbsLibPath)
 	fmt.Println("AbsInputRoot: " + AbsInputRoot)
